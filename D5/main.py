@@ -6,16 +6,13 @@ math_score = np.array([60,85,60,68,np.nan,60])
 
 chinese_score = np.array([65,90,82,72,66,77])
 
-all = np.vstack((english_score, math_score, chinese_score))
+print("數學分數 ","平均",np.nanmean(math_score),"最大值",np.nanmax(math_score),"最小值",np.nanmin(math_score),"標準差",np.nanstd(math_score))
+print("國文分數 ","平均",np.nanmean(chinese_score),"最大值",np.nanmax(chinese_score),"最小值",np.nanmin(chinese_score),"標準差",np.nanstd(chinese_score))
+print("英文分數 ","平均",np.nanmean(english_score),"最大值",np.nanmax(english_score),"最小值",np.nanmin(english_score),"標準差",np.nanstd(english_score))
 
-print(np.nanmean(all, axis=0))
-print(np.nanmax(all, axis=0))
-print(np.nanmax(all, axis=0))
-print(np.nanstd(all, axis=0))
+math_score[4]=55
+print("補考數學後")
+print("數學分數 ","平均",np.nanmean(math_score),"最大值",np.nanmax(math_score),"最小值",np.nanmin(math_score),"標準差",np.nanstd(math_score))
 
-all[1][4]=55
-
-print(np.nanmean(all, axis=0))
-print(np.nanmax(all, axis=0))
-print(np.nanmax(all, axis=0))
-print(np.nanstd(all, axis=0))
+print("國文與數學相關係數",np.corrcoef(chinese_score,math_score))
+print("國文與英文相關係數",np.corrcoef(chinese_score,english_score))
