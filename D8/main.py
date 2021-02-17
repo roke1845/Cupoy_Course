@@ -16,6 +16,7 @@ a['weight'] = weight_list
 a['rank'] = rank_list
 a['myopia'] = myopia_list
 # print(a)
-print('平均體重為:' + str(sum(a['weight'])/len(a['weight'])))
-print('男生平均體重為:' + str(sum(a[a['sex'] == 'boy']['weight'])/len(a[a['sex'] == 'boy']['weight'])))
-print('女生平均體重為:' + str(sum(a[a['sex'] == 'girl']['weight'])/len(a[a['sex'] == 'girl']['weight'])))
+print('平均體重為:' + str(np.mean(a['weight'])))
+print('男生平均體重為:' + str(np.mean(a[a['sex'] == 'boy']['weight'])))
+print('女生平均體重為:' + str(np.mean(a[a['sex'] == 'girl']['weight'])))
+
